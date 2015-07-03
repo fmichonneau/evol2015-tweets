@@ -271,6 +271,8 @@ ggplot(hi_mean_rt) + geom_bar(aes(x = screenName, y = mean_rt),
 
 ## Word cloud
 
+The top 100 words among the original tweets.
+
 ```{r word-cloud, echo=FALSE}
 library(wordcloud)
 
