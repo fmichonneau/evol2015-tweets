@@ -39,6 +39,7 @@ output:
 ## dt_tweets <- readRDS(file = "data_frame_all_tweets.rds")
 dt_tweets <- read.csv(file = "evol2015_tweets.csv", stringsAsFactors = FALSE)
 dt_tweets$created <- as.Date(dt_tweets$created)
+
 library(dplyr)
 library(ggplot2)
 library(tidyr)
@@ -80,7 +81,7 @@ top_fav <- dt_tweets %>%
 
 render_tweet <- function(dt, row) {
     screen_name <- dt[i, "screenName"]
-    id <- dt[i, "id"]
+    id <- format(dt[i, "id"], scientific = FALSE)
     txt <- dt[i, "text"]
     created <- format(dt[i, "created"], "%Y-%m-%d")
     n_fav <- dt[i, "favoriteCount"]
